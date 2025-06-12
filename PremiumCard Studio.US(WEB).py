@@ -219,7 +219,7 @@ def buy():
     name, email = data['name'], data['email']
     brand, color = data['brand'], data['color']
     delivery = datetime.now() + timedelta(days=random.randint(3,14))
-    msg = MIMEText(f"Dear {name},\n\nYour {brand} card in {color} color is being prepared for shipment.\nExpected delivery date: {delivery:%B %d, %Y}.\n\nThank you for your order!\n\nBest regards,\nCardTeam by O.K.")
+    msg = MIMEText(f"Dear {name},\n\nYour {brand} card in {color} color is being prepared for shipment.\nExpected delivery date: {delivery:%B %d, %Y}.\n\nThank you for your order!\n\nBest regards,\nDeveloper by Aleksandra Kaznowska: https://github.com/Ola-Kaznowska")
     msg['Subject'] = f"Your {brand} Card Order Confirmation"
     msg['From'], msg['To'] = EMAIL_ADDRESS, email
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
